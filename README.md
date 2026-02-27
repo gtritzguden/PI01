@@ -17,3 +17,9 @@ This project consists of transforming a 3D printer into an automated sorting mac
 - Clustering Algorithm: We use K-means to cluster the hardware pieces based on their feature representation 
 
  
+# Authors
+Guillaume Tritz--Guden
+Nicola Di Pietro
+Mathieu Brasseur
+Mohamed Hamza Choukaili
+Bilal Erraissi
