@@ -8,3 +8,4 @@ scikit_image==0.26.0
 torch==2.10.0+cpu
 torchvision==0.25.0+cpu
 tqdm==4.67.3
+opencv-python==4.13.0.92
