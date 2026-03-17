@@ -49,27 +49,18 @@ Follow these steps to set up the development environment on your local machine.
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/gtritzguden/PI01.git
-cd project-name
+cd PI01
 ```
-
-### 2. Create a python virtual environment
+### 2. Install the prerequisties 
+OpenCV need to be installed at the system level to make sure GStreamer will work correctly.  
+The other dependencies are installed using pip.   
+A fully automatic script is provided to facilitate this installation. It creates a virtual environment and install the dependencies.   
 ```bash
-python -m venv venv_name
+./setup_rpi.sh
 ```
 
-### 3. Activate the virtual environment
-#### Windows 
-```bash
-.\venv\Scripts\activate
-```
-#### macOS / Linux
-```
-source venv_name/bin/activate
-```
+### 3. Dependencies
 
-### 4. Dependencies
-> ⚠️ `torch` and `torchvision` are installed from the PyTorch CPU index to save storage:
-> https://download.pytorch.org/whl/cpu
 
 | Package        | Version        |
 |----------------|---------------|
@@ -79,15 +70,12 @@ source venv_name/bin/activate
 | pyserial       | 3.5           |
 | scikit-learn   | 1.8.0         |
 | scikit-image   | 0.26.0        |
-| torch          | 2.10.0+cpu    |
-| torchvision    | 0.25.0+cpu    |
+| torch          |               |
+| torchvision    |               |
 | tqdm           | 4.67.3        |
 
-```bash
-pip install -r requirements.txt
-```
 
-### 5. Usage
+### 4. Usage
 #### Train the model
 ```bash
 python src/train_classifier
@@ -104,7 +92,7 @@ python main.py
   <img src="Images/screenshot.png" alt="GUI" width="500"/>
 </p>
 
-Once the GUI has launched, click on "connecter". It allow the communication between the RPI5 and the printer via serial connection
+Once the GUI has launched, click on **Se connecter**. It allow the communication between the RPI5 and the printer via serial connection
 Multiple options then :     
 - **Home (G28)** Do a homing
 - **Coordonées pixels** Move the printer's to the required position (*x,y* : pixel - *z* : mm - *F* : speed)
@@ -116,7 +104,13 @@ By launching **Pipeline Complet** the following step will append :
 - Head moving in a corner to let the camera take a photo of the tray
 - Auto classification of the detected fasterners
 
+<p align="center">
+  <img src="Images/selection_interface.png" alt="selection_interface" width="500"/>
+</p>
 
+On this interface, there are the different clusters created and you can select which cluster will go in which bin (different clusters can be put in the same bin)    
+Once the selection is made, click on **Valider**    
+The sorting machine will then proceed the sorting. It takes a new photo every 3 pieces sorted to ensure the pieces have not moved.
 
 ## 👥 Team Members
 
