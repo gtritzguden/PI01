@@ -103,12 +103,20 @@ python main.py
 <p align="center">
   <img src="Images/screenshot.png" alt="GUI" width="500"/>
 </p>
+
 Once the GUI has launched, click on "connecter". It allow the communication between the RPI5 and the printer via serial connection
-Multiple options then : \ 
+Multiple options then :     
 - **Home (G28)** Do a homing
-- Move the printer's head by using pixel coordinates
-- Launch a detection and a classification (whithout sorting) :
----
+- **Coordonées pixels** Move the printer's to the required position (*x,y* : pixel - *z* : mm - *F* : speed)
+- **Capturer + détecter** Launch a detection and a classification whithout sorting
+- **Pipeline Complet** Launch a full sorting : detection, classification, pushing fasteners into the bins
+
+By launching **Pipeline Complet** the following step will append : 
+- Auto Homing
+- Head moving in a corner to let the camera take a photo of the tray
+- Auto classification of the detected fasterners
+
+
 
 ## 👥 Team Members
 
